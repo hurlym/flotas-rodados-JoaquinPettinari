@@ -1,0 +1,41 @@
+import Rodado.*
+import Corsa.*
+import Kwid.*
+import AutosEspeciales.*
+import Dependencia.* 
+
+describe "group of tests" {
+	var cachito = new Corsa()
+	cachito.color("Rojo")
+
+	test "TestDependencia" {
+	// Todas las clases creadas
+	var cultura = new Dependencia()
+	var deportes = new Dependencia()
+	
+	//Todos los empleados 
+	deportes.empleados(45)
+	cultura.empleados(31)
+	
+	//Autos creados
+	trafic.interior(interiorPopular)
+	trafic.motor(motorBataton)
+	
+	
+	//Flota Deportes
+	deportes.add(cachito)
+	deportes.add(new Corsa(color = "Verde"))
+	deportes.add(new Corsa(color = "Azul"))
+	deportes.add(new Kwid(tanqueAdicional = true))
+	deportes.add(new AutosEspeciales(capacidad = 5, peso = 1200, velocidadMaxima = 160, color = "beige"))
+	
+	//Flota Cultura
+	cultura.add(cachito)
+	cultura.add(new Kwid(tanqueAdicional = true))
+	cultura.add(new Kwid(tanqueAdicional = true))
+	cultura.add(new Kwid())
+	cultura.add(trafic)
+	
+	
+	}
+}

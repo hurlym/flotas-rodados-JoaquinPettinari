@@ -1,0 +1,39 @@
+import Motor.*
+import Rodado.*
+import Interior.*
+import Corsa.*
+import Kwid.*
+import AutosEspeciales.*
+import Dependencia.*
+
+test "general" {
+	var cultura = new Dependencia()
+	var corsa = new AutosEspeciales()
+	var gol = new AutosEspeciales()
+	var susuki = new AutosEspeciales()
+	
+	corsa.color("Azul")
+	gol.color("Azul")
+	susuki.color("Negro")
+	
+	corsa.capacidad(4)
+	gol.capacidad(3)
+	susuki.capacidad(3)
+	
+	cultura.agregarAFlota(corsa)
+	cultura.agregarAFlota(gol)
+	cultura.agregarAFlota(susuki)
+	
+	corsa.velocidadMaxima(150)
+	gol.velocidadMaxima(160)
+	susuki.velocidadMaxima(200)
+	
+	cultura.empleados(19)
+	
+	assert.equals(7, cultura.capacidadTotalEnColor("Azul"))
+	assert.equals("Negro", cultura.colorDelRodadoMasRapido())
+	assert.equals(false, cultura.esGrande())
+	assert.equals(9, cultura.capacidadFaltante())
+	
+	
+}
